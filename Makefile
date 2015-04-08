@@ -16,10 +16,9 @@ PKG_SOURCE_URL:=http://nodejs.org/dist/${PKG_VERSION}
 PKG_MD5SUM:=a2b05af77e8e3ef3b4c40a68372429f1
 GIT_SOURCE:=https://github.com/brimstone/v8m-rb
 #GIT_SOURCE:=/tmp/v8m-rb
-LOCAL_TOOL_CHAN:=/home/even/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/mipsel-openwrt-linux-uclibc
 
 GYP_DEFINES:=v8_use_mips_abi_hardfloat=false v8_can_use_fpu_instructions=false
-LIBS:=-I$(LOCAL_TOOL_CHAN)/include/c++/4.6.4 -I$(LOCAL_TOOL_CHAN)/include/c++/4.6.4/mipsel-openwrt-linux-uclibc/
+LIBS:=-I$(TOOLCHAIN_DIR)/mipsel-openwrt-linux-uclibc/include/c++/4.6.4/ -I$(TOOLCHAIN_DIR)/mipsel-openwrt-linux-uclibc/include/c++/4.6.4/mipsel-openwrt-linux-uclibc/
 
 include $(INCLUDE_DIR)/package.mk
 
